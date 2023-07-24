@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h3{
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    /* border: 2px solid black; */
+}
+
+.container {
+    border: 2px solid lightcoral;
+    max-width: 1000px;
+    width : 75%;
+    padding: 35px;
+    margin-top: 15px;
+}
+
+/* .question {
+    border: 2px solid lightgreen;
+} */
+
+.question{
+    width: 80%;
+}
+
+.options {
+    /* border:  2px solid rgb(46, 96, 147); */
+    margin: 15px 0;
+    
+}
+
+.sub-option{
+    /* border: 2px solid pink; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub-sub-option{
+    width: 50%;
+}
+
+.op-input{
+    width: 70%;
+}
+
+.answer {
+    display: flex;
+    /* border: 2px solid lightseagreen; */
+}
+
+.sub-answer{
+    padding-left: 10px;
+    word-spacing: 3px;
+}
+
+.add-btn{
+    /* border: 2px solid darkorange; */
+    padding-top: 15px;
+    max-width: 1000px;
+    width : 75%;
+}
+
+.add-btn > button{
+    padding: 5px 15px;
+    background-color: transparent;
+    border: 1.5px solid black;
+    border-radius: 3px; 
+}
+.add-btn > button:hover{
+    background-color: lightsalmon;
+    color: #ffffff;
+}
+
+.host-btn{
+    max-width: 1000px;
+    width : 75%;
+    text-align: center;
+   margin: 40px 0;
+}
+
+.host-btn > button{
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 3px;
+    width: 125px;
+    height: 38px;
+}
+
+.host-btn > button:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+@media screen and (max-width:910px) {
+    .sub-option{
+        flex-direction: column;
+    }
+
+    .op-input{
+        width: 100%;
+    }
+
+    .sub-sub-option{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:910px){
+
+    .answer{
+        flex-direction: column;
+        
+    }
+
+    .question{
+        width: 100%;
+    }
+
+}

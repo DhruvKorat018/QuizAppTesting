@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Maker</title>
+    <link rel="stylesheet" href="./makeQuiz.css">
+</head>
+
+<body>
+
+    <div class="main-container" id="main-container">
+
+        <div class="container">
+
+        <h3>QUESTION 1</h3>
+
+        <div>
+            <label for="question">Type Question :</label>
+            <input class="question" type="text" name="question">
+        </div>
+
+    <div class="options">
+        <div class="sub-option">
+            <div class="sub-sub-option">
+                <label for="optionA-1">Option-A :</label>
+                <input class="op-input inputA" id="optionA-1" type="text" name="optionA">
+            </div>
+            <div class="sub-sub-option">
+                <label for="optionB-1">Option-B :</label>
+                <input class="op-input inputB" id="optionB-1" type="text" name="optionB">
+            </div>
+        </div>
+        <div class="sub-option">
+            <div class="sub-sub-option">
+                <label for="optionC-1">Option-C :</label>
+                <input class="op-input" id="optionC-1" type="text" name="optionC" >
+            </div>
+            <div class="sub-sub-option">
+                <label for="optionD-1">Option-D :</label>
+                <input class="op-input" id="optionD-1" type="text" name="optionD">
+            </div>
+        </div>
+    </div>
+
+    <div class="answer">
+        <label>Select Correct Answer :</label>
+        <div class="sub-answer">
+            <input type="radio" id="rA-1" value="A" name="ans">
+            <label for="rA-1">A</label>
+
+            <input type="radio" id="rB-1" value="B" name="ans">
+            <label for="rB-1">B</label>
+            
+            <input type="radio" id="rC-1" value="C" name="ans">
+            <label for="rC-1">C</label>
+
+            <input type="radio" id="rD-1" value="D" name="ans">
+            <label for="rD-1">D</label>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="add-btn" id="add-btn">
+        <button id="add-question">Add Question</button>
+    </div>
+
+    <div class="host-btn" id="hst-btn">
+        <button>HOST QUIZ</button>
+    </div>
+
+    </div>  
+
+<script src="./addquestion.js"></script>
+</body>
+
+</html>
