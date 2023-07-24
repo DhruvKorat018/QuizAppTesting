@@ -101,7 +101,7 @@ hstBtn.addEventListener("click", async () => {
     }
 
     try {
-        let response = await fetch('https://testing-seven-jade.vercel.app/r', {
+        let response = await fetch('https://testing-seven-jade.vercel.app/hostquiz', {
             method: "POST",
             body: JSON.stringify(quizData),
             headers: {
@@ -109,28 +109,20 @@ hstBtn.addEventListener("click", async () => {
                 "Content-Type": "application/json",
             }
         })
-        // console.log(response);
         const responseObj = await response.json()
-        console.log(responseObj)
-
-        let yourCode = `Your Quiz Code is : ${responseObj.quizCode} - Please note this code and give it to your participants to give a quiz`
-
-        alert(yourCode)
-        window.location.reload();
+        console.log(responseObj);
+        if (responseObj.error) {
+            alert("Some error occured. Fill form correctly.")
+            quizData.questions = []
+        }
+        else {
+            let yourCode = `Your Quiz Code is : ${responseObj.quizCode} - Please note this code and give it to your participants to give a quiz`
+            alert(yourCode)
+            window.location.reload();
+        }
 
     } catch (error) {
-        console.log(error);
+        alert(error)
     }
 
 })
-
-
-
-
-
-
-
-
-
-
-
