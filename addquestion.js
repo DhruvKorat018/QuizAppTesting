@@ -99,7 +99,7 @@ hstBtn.addEventListener("click", async () => {
         }
         quizData.questions.push(qdata)
     }
-
+console.log(findCheckedRadio(document.getElementsByClassName('sub-answer')[i]));
     try {
         let response = await fetch('https://testing-seven-jade.vercel.app/hostquiz', {
             method: "POST",
