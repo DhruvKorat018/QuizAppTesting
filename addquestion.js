@@ -99,30 +99,64 @@ hstBtn.addEventListener("click", async () => {
         }
         quizData.questions.push(qdata)
     }
-console.log(findCheckedRadio(document.getElementsByClassName('sub-answer')[i]));
-    try {
-        let response = await fetch('https://testing-seven-jade.vercel.app/hostquiz', {
-            method: "POST",
-            body: JSON.stringify(quizData),
-            headers: {
-                "Access-Control-Allow-Origin": '*',
-                "Content-Type": "application/json",
-            }
-        })
-        const responseObj = await response.json()
-        console.log(responseObj);
-        if (responseObj.error) {
-            alert("Some error occured. Fill form correctly.")
-            quizData.questions = []
-        }
-        else {
-            let yourCode = `Your Quiz Code is : ${responseObj.quizCode} - Please note this code and give it to your participants to give a quiz`
-            alert(yourCode)
-            window.location.reload();
-        }
+// console.log(findCheckedRadio(document.getElementsByClassName('sub-answer')[i]));
+    // try {
+    //     let response = await fetch('https://testing-seven-jade.vercel.app/hostquiz', {
+    //         method: "POST",
+    //         body: JSON.stringify(quizData),
+    //         headers: {
+    //             "Access-Control-Allow-Origin": '*',
+    //             "Content-Type": "application/json",
+    //         }
+    //     })
+    //     const responseObj = await response.json()
+    //     console.log(responseObj);
+    //     if (responseObj.error) {
+    //         alert("Some error occured. Fill form correctly.")
+    //         quizData.questions = []
+    //     }
+    //     else {
+    //         let yourCode = `Your Quiz Code is : ${responseObj.quizCode} - Please note this code and give it to your participants to give a quiz`
+    //         alert(yourCode)
+    //         window.location.reload();
+    //     }
 
-    } catch (error) {
-        alert(error)
+    // } catch (error) {
+    //     alert(error)
+    // }
+
+    // ... (previous code)
+
+// Removed the console.log(findCheckedRadio(document.getElementsByClassName('sub-answer')[i]));
+
+try {
+    let response = await fetch('https://testing-seven-jade.vercel.app/hostquiz', {
+        method: "POST",
+        body: JSON.stringify(quizData),
+        headers: {
+            "Access-Control-Allow-Origin": '*',
+            "Content-Type": "application/json",
+        }
+    })
+    const responseObj = await response.json()
+    console.log(responseObj);
+    if (responseObj.error) {
+        alert("Some error occurred. Fill the form correctly.")
+        quizData.questions = []
+    } else {
+        let yourCode = `Your Quiz Code is : ${responseObj.quizCode} - Please note this code and give it to your participants to give a quiz`
+        alert(yourCode)
+        window.location.reload();
     }
+
+} catch (error) {
+    alert(error)
+}
+
+// Add a loop to console.log the result for each question
+for (let i = 0; i < quizData.questions.length; i++) {
+    console.log(`Result for Question ${i + 1}: ${quizData.questions[i].answer}`);
+}
+
 
 })
